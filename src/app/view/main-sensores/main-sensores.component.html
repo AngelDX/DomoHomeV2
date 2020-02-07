@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Calidad del Aire </div>
+        <span class="badge badge-primary badge-pill" style="font-size: 1.3em">{{dataSensores[0]}} PPM</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Humedad </div>
+        <span class="badge badge-primary badge-pill" style="font-size: 1.3em">{{dataSensores[1]}} %</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Temperatura </div>
+        <span class="badge badge-primary badge-pill" style="font-size: 1.3em">{{dataSensores[2]}} °c</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Alarma </div>
+        <span [className]="dataActuadores[0]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1.3em">{{dataActuadores[0]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Lampara Baño </div>
+        <span [className]="dataActuadores[1]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1.3em">{{dataActuadores[1]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Lampara Cocina </div>
+        <span [className]="dataActuadores[2]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1.3em">{{dataActuadores[2]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Lampara dormitorio </div>
+        <span [className]="dataActuadores[3]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1.3em">{{dataActuadores[3]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div style="font-size: 1.2em">Lampara sala </div>
+        <span [className]="dataActuadores[4]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1.3em">{{dataActuadores[4]}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+          <table class="table table-sm table-hover table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>FECHA</th>
+                  <th>HUM.</th>
+                  <th>TEMP.</th>
+                  <th>AIRE</th>  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of (dhtList?.slice().reverse()) | slice:0:10 ; let i=index">
+                  <td>{{data.timestamp | date : 'medium' }}</td>
+                  <td>{{data.humidity}} %</td>
+                  <td>{{data.temperature}} °C</td>
+                  <td>{{data.aire}} PPM</td>
+                </tr>
+              </tbody>
+          </table>
+          Total registros: {{cont}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <app-line-chart></app-line-chart>
+  </div>
+  <div class="col-md-6">
+    <app-time-chart></app-time-chart>
+  </div>
+</div>

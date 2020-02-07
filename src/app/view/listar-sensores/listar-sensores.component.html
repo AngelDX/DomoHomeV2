@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-8">
+      <div class="card">
+      <div class="card-body">
+          <table class="table table-sm table-hover table-striped" datatable [dtOptions]="dtOptions"
+          [dtTrigger]="dtTrigger">
+              <thead class="table-primary">
+                  <tr>
+                  <th>FECHA</th>
+                  <th>HUM.</th>
+                  <th>TEMP.</th>
+                  <th>AIRE</th>  
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let data of (dhtList?.reverse())">
+                  <td>{{data.timestamp | date : 'medium' }}</td>
+                  <td>{{data.humidity}} %</td>
+                  <td>{{data.temperature}} °C</td>
+                  <td>{{data.aire}} PPM</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      </div>
+  </div>
+  <div class="col-md-4">
+      <div class="card">
+          <div class="card-body">
+              <div class="list-group">
+                  <p class="list-group-item list-group-item-action active">MENU</p>
+                  <h5 class="list-group-item list-group-item-action">Total Registros: {{total}}</h5>
+                  <a routerLink="/gestion_sensores" (click)="borrarTodo()" class="list-group-item list-group-item-action"><i class="fas fa-eraser fa-2x"></i> Borrar todo</a>
+                  <a routerLink="/gestion_sensores" (click)="exportAsXLSX()" class="list-group-item list-group-item-action"><i class="fas fa-file-excel fa-2x"></i> Exportar a Excel</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

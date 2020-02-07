@@ -24,9 +24,18 @@
               "src/assets"
             ],
             "styles": [
+              "bower_components/bootswatch/dist/flatly/bootstrap.min.css",
+              "bower_components/components-font-awesome/css/all.min.css",
+              "bower_components/datatables.net-dt/css/jquery.dataTables.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "bower_components/jquery/dist/jquery.js",
+              "bower_components/popper.js/dist/umd/popper.js",
+              "bower_components/bootstrap/dist/js/bootstrap.js",
+              "bower_components/datatables.net/js/jquery.dataTables.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,9 +98,18 @@
               "src/assets"
             ],
             "styles": [
+              "bower_components/bootswatch/dist/flatly/bootstrap.min.css",
+              "bower_components/components-font-awesome/css/fontawesome-all.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "bower_components/jquery/dist/jquery.js",
+              "bower_components/popper.js/dist/umd/popper.js",
+              "bower_components/bootstrap/dist/js/bootstrap.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
           }
         },
         "lint": {

@@ -1,0 +1,88 @@
+<div class="jumbotron">
+    <h3 class="text-center">Gestion SmartHome</h3>
+    <h4 class="text-center">Plataforma para control sensores en tiempo real</h4>
+    <p class="text-center">Se integra Arduino para optener datos de los sensores, los cuales se envian a 
+        Firebase en forma segura para luego visualizarlo en Web mediante Angular8 en tiempo real</p>
+      <hr>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#graficas">Gráficas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#gestion">Gestión</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active show" id="dashboard">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card text-white bg-success">
+                        <div class="card-header"><h4>Control Alarma</h4></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="switchAlarma" 
+                                            (change)="actualizarAlarma($event)">
+                                            <label class="custom-control-label" for="switchAlarma">Activar/desactivar Alarma</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-info mt-2">
+                        <div class="card-header"><h4>Control lámparas</h4></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="custom-control custom-switch mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch2"
+                                        (change)="actualizarLuzDormitorio($event)">
+                                        <label class="custom-control-label" for="customSwitch2">Luz Dormitorio</label>
+                                    </div>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch3"
+                                        (change)="actualizarLuzSala($event)">
+                                        <label class="custom-control-label" for="customSwitch3">Luz Sala</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="custom-control custom-switch mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch4"
+                                        (change)="actualizarLuzCocina($event)">
+                                        <label class="custom-control-label" for="customSwitch4">Luz Cocina</label>
+                                    </div>
+
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch5"
+                                        (change)="actualizarLuzBanio($event)">
+                                        <label class="custom-control-label" for="customSwitch5">Luz Baño</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card border-primary mb-3">
+                        <div class="card-header"><h4>Datos Informativos</h4></div>
+                        <div class="panel-body">
+                            <app-data-sensores></app-data-sensores>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="graficas">
+            <app-main-sensores></app-main-sensores>
+        </div>
+        <div class="tab-pane fade" id="gestion">
+            <app-listar-sensores></app-listar-sensores>
+        </div>
+    </div>
+</div>

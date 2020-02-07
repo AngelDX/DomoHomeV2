@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Calidad del Aire </div>
+        <span class="badge badge-primary badge-pill" style="font-size: 1em">{{dataSensores[0]}} PPM</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Humedad </div>
+        <span class="badge badge-primary badge-pill" style="font-size: 1em">{{dataSensores[1]}} %</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Temperatura </div>
+        <span class="badge badge-primary badge-pill" style="font-size: 1em">{{dataSensores[3]}} °c</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Presencia </div>
+        <span [className]="dataSensores[2]=='0' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1em">{{dataSensores[2]}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Lampara Baño </div>
+        <span [className]="dataActuadores[1]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1em">{{dataActuadores[1]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Lampara Cocina </div>
+        <span [className]="dataActuadores[2]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1em">{{dataActuadores[2]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Lampara dormitorio </div>
+        <span [className]="dataActuadores[3]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1em">{{dataActuadores[3]}}</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>Lampara sala </div>
+        <span [className]="dataActuadores[4]=='on' ? 'badge badge-success badge-pill' : 'badge badge-danger badge-pill'" style="font-size: 1em">{{dataActuadores[4]}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
